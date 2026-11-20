@@ -1,0 +1,20 @@
+{
+  "folgen": [
+    ["zwei Komma fünf Meter", "2,5 m"],
+    ["null Komma fünf Liter", "0,5 l"],
+    ["zwölf Volt", "12 V"],
+    ["vierundzwanzig Volt", "24 V"],
+    ["zehn Prozent", "10 %"],
+    ["fünfzig Prozent", "50 %"],
+    ["hundert Kilometer pro Stunde", "100 km/h"],
+    ["zwanzig Grad", "20 °C"],
+    ["dreitausendfünfhundert Euro", "3.500 €"],
+    ["zweitausendsechsundzwanzig", "2026"],
+    ["Teil eins", "Teil 1"],
+    ["Teil zwei", "Teil 2"]
+  ],
+  "zeichen": [
+    ["U-S-B", "USB"],
+    ["K-I-", "KI-"]
+  ]
+}

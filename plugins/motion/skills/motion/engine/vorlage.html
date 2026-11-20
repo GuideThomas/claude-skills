@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Motion-Video</title>
+<!--@KOPF@-->
+<style>
+  :root {
+    --ar: 16 / 9;
+    --chrome-bg: #141416;
+    --chrome-fg: #e8e8ea;
+    --chrome-muted: #8a8a90;
+    --chrome-accent: #00B9F1;
+    --chrome-line: #2a2a2e;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) { --chrome-bg: #f0f2f5; --chrome-fg: #1c1c1e; --chrome-muted: #5c5c63; --chrome-line: #d6d8dc; }
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html, body { margin: 0; min-height: 100%; background: var(--chrome-bg); color: var(--chrome-fg); font: 15px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .stage { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 16px; min-height: 100vh; justify-content: center; }
+  .frame { position: relative; width: 100%; max-width: min(1280px, calc((100vh - 140px) * (var(--ar)))); }
+  canvas { display: block; width: 100%; height: auto; aspect-ratio: var(--ar); border-radius: 6px; cursor: pointer; background: #000; }
+  #continue { position: absolute; right: 16px; bottom: 16px; padding: 10px 18px; border: 0; border-radius: 5px; background: var(--chrome-accent); color: #fff; font: 600 15px system-ui, sans-serif; cursor: pointer; }
+  .bar { width: 100%; max-width: inherit; display: flex; align-items: center; gap: 10px; }
+  .controls { width: 100%; max-width: min(1280px, calc((100vh - 140px) * (var(--ar)))); display: flex; flex-direction: column; gap: 8px; }
+  button.icon { width: 36px; height: 36px; flex: none; border: 1px solid var(--chrome-line); border-radius: 5px; background: transparent; color: var(--chrome-fg); cursor: pointer; display: grid; place-items: center; }
+  button.icon svg { width: 16px; height: 16px; fill: currentColor; }
+  #play[data-state="pause"] .i-play, #play:not([data-state="pause"]) .i-pause { display: none; }
+  input[type="range"] { flex: 1; min-width: 0; accent-color: var(--chrome-accent); }
+  #time { font-variant-numeric: tabular-nums; color: var(--chrome-muted); min-width: 92px; text-align: right; }
+  #chapters { display: flex; flex-wrap: wrap; gap: 6px; }
+  #chapters button { padding: 5px 10px; border: 1px solid var(--chrome-line); border-radius: 5px; background: transparent; color: var(--chrome-fg); font: inherit; font-size: 13px; cursor: pointer; }
+  #chapters button:hover, button.icon:hover { border-color: var(--chrome-accent); }
+  label.stops { display: flex; align-items: center; gap: 6px; color: var(--chrome-muted); font-size: 13px; white-space: nowrap; }
+  #errors { color: #ef4444; font-size: 13px; }
+  #errors:empty { display: none; }
+  body.export .controls, body.export #continue { display: none !important; }
+  body.export .stage { padding: 0; min-height: 0; display: block; }
+  body.export .frame { max-width: none; width: auto; }
+  body.export canvas { width: auto; border-radius: 0; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="frame">
+    <canvas id="c" aria-label="Animiertes Video"></canvas>
+    <button id="continue" hidden>Weiter</button>
+  </div>
+  <div class="controls">
+    <div class="bar">
+      <button id="play" class="icon" aria-label="Abspielen">
+        <svg class="i-play" viewBox="0 0 16 16"><path d="M4 2.5v11l9-5.5z"/></svg>
+        <svg class="i-pause" viewBox="0 0 16 16"><path d="M4 2h3v12H4zM9 2h3v12H9z"/></svg>
+      </button>
+      <input id="seek" type="range" min="0" max="10" step="0.01" value="0" aria-label="Position">
+      <span id="time">0:00 / 0:00</span>
+      <label class="stops" hidden><input id="stops" type="checkbox" checked> Stopps</label>
+      <button id="full" class="icon" aria-label="Vollbild"><svg viewBox="0 0 16 16"><path d="M2 2h5v2H4v3H2zM9 2h5v5h-2V4H9zM2 9h2v3h3v2H2zM12 9h2v5H9v-2h3z"/></svg></button>
+    </div>
+    <div id="chapters"></div>
+    <div id="errors"></div>
+  </div>
+</div>
+<script>
+/*@VIDEO-START@*/
+/*@VIDEO-ENDE@*/
+</script>
+<script>
+/*@RUNTIME@*/
+</script>
+</body>
+</html>

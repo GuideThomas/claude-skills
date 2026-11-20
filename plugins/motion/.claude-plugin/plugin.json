@@ -1,0 +1,9 @@
+{
+  "name": "motion",
+  "version": "1.0.0",
+  "description": "Erklärvideos und Motion Graphics aus reinem JavaScript: MP4 und interaktive HTML-Seite, optional 3D (Three.js), künstliche Stimme (ElevenLabs) und wortgenaue Untertitel.",
+  "author": {
+    "name": "Thomas Winkler"
+  },
+  "keywords": ["video", "motion-graphics", "erklärvideo", "animation", "three.js"]
+}

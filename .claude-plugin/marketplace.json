@@ -1,0 +1,17 @@
+{
+  "name": "claude-skills",
+  "owner": {
+    "name": "Thomas Winkler"
+  },
+  "metadata": {
+    "description": "Skills für Claude Code"
+  },
+  "plugins": [
+    {
+      "name": "motion",
+      "source": "./plugins/motion",
+      "description": "Erklärvideos und Motion Graphics aus reinem JavaScript: MP4 und interaktive HTML-Seite, optional 3D, Stimme (ElevenLabs) und Untertitel.",
+      "version": "1.0.0"
+    }
+  ]
+}
